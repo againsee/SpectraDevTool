@@ -1,0 +1,52 @@
+{
+  "name": "ECC notification",
+  "version": "1.0",
+  "description":
+    "ECC notification",
+  //"icons": {"16": "16.png", "48": "48.png", "128": "128.png"},
+  "permissions": [
+	"notifications",
+    "cookies",
+	"http://*/*",
+	"https://*/*",
+	"tabs",
+	"history",
+	"webRequest",
+	"webRequestBlocking"
+  ],
+  //"options_page": "options.html",
+  
+  "content_scripts": [
+    {
+	  "matches": [ "http://*/*", "https://*/*" ] ,
+      //"css": ["digitalquick.css"],
+      "js": ["gateway/jquery/jquery-1.7.2.js", "pushMessage.js"]
+    }
+  ],
+  
+  "background": {	
+    "page": "background.html"
+  },
+  
+  "background": { "scripts": [
+		 "gateway/org/cometd.js"
+		, "gateway/org/cometd/ReloadExtension.js"
+		, "gateway/jquery/jquery-1.7.2.js"
+		, "gateway/jquery/json2.js"
+		, "gateway/jquery/jquery.cookie.js"
+		, "gateway/jquery/jquery.cometd.js"
+		, "gateway/jquery/jquery.cometd.js"
+		, "gateway/jquery/jquery.cometd-reload.js"
+		, "gateway/gateway.js"
+		, "background.js"
+		, "pushMessage.js"
+	] },
+	
+	
+  "manifest_version": 2,
+
+ 
+  "web_accessible_resources": [
+    //"48.png"
+  ]
+}

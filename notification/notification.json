@@ -1,0 +1,17 @@
+{
+    "name":"PixelsTech Website Statsitic Viewer",
+    "manifest_version":2,
+    "version":"1.0",
+    "background":{
+        "scripts":["notification.js"]
+    },
+    "browser_action":{
+        "default_icon":"pixelstech.gif"
+    },
+    "permissions":[
+        "notifications",
+    ],
+    "web_accessible_resources":[
+        "pixelstech.gif"
+    ]
+}
