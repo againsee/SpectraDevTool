@@ -1,0 +1,32 @@
+{
+	"name": "screen capture",
+	"version": "1.0",
+	"description": "screen capture",
+	"browser_action": {
+		"default_icon": "images/capture.png",
+		"default_popup": "popup.html"
+   },
+   "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ] ,
+      "js": ["js/jquery-1.9.1.min.js", "js/contents-script.js"]
+    }
+  ],
+   "background": {
+      "page": "background.html"
+   },
+   "background": {
+		"scripts": ["js/jquery-1.9.1.min.js", "js/background.js"]
+  },
+   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+	"icons": {"16": "images/capture.png"},
+	"web_accessible_resources": [
+		"selection.html",
+		"images/number-1.png",
+		"images/number-2.png",
+		"images/number-3.png"
+	],
+	"optional_permissions": [ "clipboardWrite" ],
+	"permissions": [ "tabs", "\u003Call_urls>", "storage", "contextMenus" ],
+	"manifest_version": 2
+}

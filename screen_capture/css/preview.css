@@ -1,0 +1,38 @@
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #fff;
+    font-family: "Chau Philomene One", sans-serif;
+}
+
+body.upload {
+    cursor: progress;
+}
+#screenshot {
+    display: block;
+    margin: 10px auto 10px auto;
+    -webkit-box-shadow: 0px 0px 50px rgba(0,0,0,0.6);
+}
+
+#tmp_canvas {
+	display: block;
+    margin: 10px auto 10px auto;
+    -webkit-box-shadow: 0px 0px 50px rgba(0,0,0,0.6);
+}
+
+#screenshot-img {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    -webkit-filter: blur(100px);
+    -webkit-transform: translateZ(0);
+    opacity: 0.2;
+}
+
+.paint-toolbar {background-color:#337ab7; width:100%; height:68px; text-align:center; float:left;}
+
+

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8">
+        <title>스크린샷 미리보기</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
+        <link rel="stylesheet" type="text/css" href="css/preview.css" />
+        <link rel="stylesheet" type="text/css" href="css/drawing.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.min.css" />
+        
+    </head>
+    <body>
+    <img id="preview2" />
+    	<div class="paint-toolbar">
+    		<ul style="float:left;" class="bg-primary save-tool-panel">
+	        	<li id="save" class="paint-tool left-radius" title="저장">
+					<img src="../images/download.png" />
+				</li>
+				<li id="clipboard" class="paint-tool" title="클립보드">
+					<img src="../images/clipboard.png" />
+				</li>
+				<li id="share" class="paint-tool" title="공유">
+					<img src="../images/share.png" />
+				</li>
+				<li id="email" class="paint-tool right-radius" title="이메일">
+					<img src="../images/email.png" />
+				</li>
+			</ul>
+			
+	        <ul class="bg-primary paint-tool-panel">
+				<li id="rectangle" class="paint-tool split" title="사각형">
+					<img src="../images/rectangle.png" />
+				</li>
+				<li id="circle" class="paint-tool" title="원형">
+					<img src="../images/circle.png" />
+				</li>
+				<li id="line" class="paint-tool" title="선">
+					<img src="../images/line.png" />
+				</li>
+				<li id="arrow" class="paint-tool" title="화살표">
+					<img src="../images/arrow.png" />
+				</li>
+				<li id="brush" class="paint-tool">
+					<img src="../images/pencil.png" title="연필"/>
+				</li>
+				<li id="spray" class="paint-tool">
+					<img src="../images/spray.png" title="스프레이"/>
+				</li>
+				<li id="text" class="paint-tool">
+					<img src="../images/text.png" title="텍스트"/>
+				</li>
+				<li id="blur" class="paint-tool">
+					<img src="../images/blur.png" title="흐리게"/>
+				</li>
+				<!-- <li id="crop" class="paint-tool">
+					<img src="../images/crop.png" title="잘라내기"/>
+				</li> -->
+				<li class="split color-tool">
+					<div title="색깔 선택">
+						<div class="color-picker">
+							<span class="caret hide"></span>
+						</div>
+						<ul class="color-list hide">
+							<li class="magnify" style="background-color: #f79232"></li>
+							<li style="background-color: #337ab7"></li>
+							<li style="background-color: #5cb85c"></li>
+							<li style="background-color: #5bc0de"></li>
+							<li style="background-color: #f0ad4e"></li>
+							<li style="background-color: #d9534f"></li>
+							<li style="background-color: #333333"></li>
+							<li style="background-color: #f5f5f5"></li>
+						</ul>
+					</div>
+				</li>
+				<li class="split" style="width:80px; padding-top:0; padding-left:2px;">
+					<div title="선굵기 및 글자크기 조절">
+						<div id="lineWidthText" style="text-align:center; color:#f6931f; font-size:11px; margin: 2px 0;"></div>
+						<div id="lineWidth" style="width:60px; margin-left:8px;"></div>
+					</div>
+				</li>
+				<li class="split undo-tool">
+					<img src="../images/undo.png" title="되돌리기"/>
+				</li>
+				<li class="trash-tool right-radius">
+					<img src="../images/trash.png" title="전체 지우기"/>
+				</li>
+			</ul>
+			
+			<ul style="float:right;" class="bg-primary close-panel">
+	        	<li id="close" class="paint-tool all-radius" title="닫기">
+					<img src="../images/close.png"/>
+				</li>
+			</ul>
+	    </div>
+	    
+       	<div id="sketch"></div>
+       
+       <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/sketch.js"></script>
+        <script type="text/javascript" src="js/preview.js"></script>
+        <script type="text/javascript" src="js/drawing.js"></script>
+        <script type="text/javascript" src="js/jquery.imgareaselect.min.js"></script>
+        
+    </body>
+</html>

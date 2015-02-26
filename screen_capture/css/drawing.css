@@ -1,0 +1,35 @@
+#sketch 
+{
+    float: left;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#tmp_canvas 
+{
+    position: absolute;
+    left: 0px; right: 0;
+    bottom: 0; top: 0;
+    cursor: crosshair;
+}
+
+
+.paint-tool-panel, .save-tool-panel, .close-panel {list-style:none; padding:15px; margin-bottom:0; display:inline-block;}
+.paint-tool-panel > li, .save-tool-panel > li, .close-panel > li {width:35px;height:35px; float:left; text-align: center; background-color:#f7f7f9; padding-top:5px;}
+.selected {background-color:#d1d1d1 !important;}
+.split {border-left:1px solid #d1d1d1;}
+.color-tool {position: relative;}
+.color-picker {width:20px; height:20px; margin-left:7px; margin-top:2px; border-radius:3px;}
+.color-list {list-style:none; width:168px; left:-60px; position:absolute; height:28px; padding: 3px 3px 0; top: 30px; border:1px solid #d1d1d1; background-color:#f7f7f9; }
+.color-list li {float:left; width:20px; height:20px;}
+.color-mouseover {border:2px solid #999999;}
+.tool-item{width:35px; height:35px; background-color:#f7f7f9; margin-top:15px; margin-left:10px; margin-right:10px; padding-top:5px;}
+
+.ui-slider .ui-slider-handle {height:1.0em; }
+.ui-slider .ui-slider-range { background: #ef2929; }
+
+.all-radius {border-radius: 3px}
+.left-radius {border-top-left-radius: 3px; border-bottom-left-radius: 3px;}
+.right-radius {border-top-right-radius: 3px; border-bottom-right-radius: 3px;}
+#testDiv {margin:10px auto 10px auto}
