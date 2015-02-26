@@ -22,7 +22,7 @@ $(function() {
 	        //canvas.sketch();
 	        
 	        var obj = new DrawingTool('#screenshot');
-	        obj.init({tool:'blur'});
+	        obj.init({tool:'rectangle'});
 	    }
 	    
 	    img.src = bg.screenshot;
