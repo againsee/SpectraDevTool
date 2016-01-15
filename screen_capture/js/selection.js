@@ -34,7 +34,7 @@ function debug(str)
         setTimeout(function() {
             //chrome.runtime.sendMessage({coords: selection.getSelection()}, function() {});
         	//debug('selection : ' + selection.getSelection())
-        	chrome.runtime.sendMessage({'action' : 'selection-capture', coords: selection.getSelection()}, function() {});
+        	chrome.runtime.sendMessage({'action' : 'capture-by-selection', coords: selection.getSelection()}, function() {});
             parent.postMessage('removeRegion', '*');
         }, 50);
     });

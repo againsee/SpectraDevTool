@@ -2,107 +2,172 @@
 <html>
     <head>
     	<meta charset="utf-8">
-        <title>스크린샷 미리보기</title>
+        <title>Rudaks Capture 미리보기</title>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
         <link rel="stylesheet" type="text/css" href="css/preview.css" />
         <link rel="stylesheet" type="text/css" href="css/drawing.css" />
         <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.min.css" />
-        
     </head>
     <body>
-    <img id="preview2" />
-    	<div class="paint-toolbar">
-    		<ul style="float:left;" class="bg-primary save-tool-panel">
-	        	<li id="save" class="paint-tool left-radius" title="저장">
-					<img src="../images/download.png" />
-				</li>
-				<li id="clipboard" class="paint-tool" title="클립보드">
-					<img src="../images/clipboard.png" />
-				</li>
-				<li id="share" class="paint-tool" title="공유">
-					<img src="../images/share.png" />
-				</li>
-				<li id="email" class="paint-tool right-radius" title="이메일">
-					<img src="../images/email.png" />
-				</li>
-			</ul>
-			
-	        <ul class="bg-primary paint-tool-panel">
-				<li id="rectangle" class="paint-tool split" title="사각형">
-					<img src="../images/rectangle.png" />
-				</li>
-				<li id="circle" class="paint-tool" title="원형">
-					<img src="../images/circle.png" />
-				</li>
-				<li id="line" class="paint-tool" title="선">
-					<img src="../images/line.png" />
-				</li>
-				<li id="arrow" class="paint-tool" title="화살표">
-					<img src="../images/arrow.png" />
-				</li>
-				<li id="brush" class="paint-tool">
-					<img src="../images/pencil.png" title="연필"/>
-				</li>
-				<li id="spray" class="paint-tool">
-					<img src="../images/spray.png" title="스프레이"/>
-				</li>
-				<li id="text" class="paint-tool">
-					<img src="../images/text.png" title="텍스트"/>
-				</li>
-				<li id="blur" class="paint-tool">
-					<img src="../images/blur.png" title="흐리게"/>
-				</li>
-				<!-- <li id="crop" class="paint-tool">
-					<img src="../images/crop.png" title="잘라내기"/>
-				</li> -->
-				<li class="split color-tool">
-					<div title="색깔 선택">
-						<div class="color-picker">
-							<span class="caret hide"></span>
+    	<img id="preview2" />
+	    <div class="wrapper">
+	    	<div class="paint-toolbar">
+	    		<ul style="float:left;" class="bg-primary save-tool-panel">
+		        	<li id="save" class="paint-tool left-radius" title="이미지로 저장" data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/download.png" />
+					</li>
+					<li id="saveAsOne" class="paint-tool" title="전체 이미지로 저장" data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/download_as_one.png" />
+					</li>
+					<li id="addAttach" class="paint-tool" title="파일 추가" data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/attach.png" />
+					</li>
+					<li id="clipboard" class="paint-tool" title="클립보드 복사" data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/clipboard.png" />
+					</li>
+					<li id="share" class="paint-tool" title="공유하기" data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/share.png" />
+					</li>
+					<li class="paint-tool right-radius" title="이메일 보내기" data-toggle="tooltip" data-placement="bottom">
+						<a href="#" id="sendEmail" data-toggle="modal" data-target="#emailModal"><img src="../images/email.png" /></a>
+					</li>
+				</ul>
+				<form id="add-file-form" method="post" enctype="multipart/form-data" style="position:absolute; top:-9999px" action="#"><input class="file-attachment" type="file" id="files" name="files" accept="image/jpeg,image/png,jpg|png" multiple=""></form>
+				
+		        <ul class="bg-primary paint-tool-panel">
+					<li id="rectangle" class="paint-tool split" title="사각형" data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/rectangle.png" />
+					</li>
+					<li id="circle" class="paint-tool" title="원형" data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/circle.png" />
+					</li>
+					<li id="line" class="paint-tool" title="선" data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/line.png" />
+					</li>
+					<li id="arrow" class="paint-tool" title="화살표" data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/arrow.png" />
+					</li>
+					<li id="brush" class="paint-tool" title="연필"  data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/pencil.png"/>
+					</li>
+					<li id="spray" class="paint-tool" title="스프레이"  data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/spray.png"/>
+					</li>
+					<li id="text" class="paint-tool" title="텍스트"  data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/text.png"/>
+					</li>
+					<li id="blur" class="paint-tool" title="흐리게"  data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/blur.png" />
+					</li>
+					<!-- <li id="crop" class="paint-tool">
+						<img src="../images/crop.png" title="잘라내기"  data-toggle="tooltip" data-placement="bottom"/>
+					</li> -->
+					<li class="split color-tool">
+						<div title="색깔 선택"  data-toggle="tooltip" data-placement="bottom">
+							<div class="color-picker">
+								<span class="caret hide"></span>
+							</div>
+							<ul class="color-list hide">
+								<li class="magnify" style="background-color: #f79232"></li>
+								<li style="background-color: #337ab7"></li>
+								<li style="background-color: #5cb85c"></li>
+								<li style="background-color: #5bc0de"></li>
+								<li style="background-color: #f0ad4e"></li>
+								<li style="background-color: #d9534f"></li>
+								<li style="background-color: #333333"></li>
+								<li style="background-color: #f5f5f5"></li>
+							</ul>
 						</div>
-						<ul class="color-list hide">
-							<li class="magnify" style="background-color: #f79232"></li>
-							<li style="background-color: #337ab7"></li>
-							<li style="background-color: #5cb85c"></li>
-							<li style="background-color: #5bc0de"></li>
-							<li style="background-color: #f0ad4e"></li>
-							<li style="background-color: #d9534f"></li>
-							<li style="background-color: #333333"></li>
-							<li style="background-color: #f5f5f5"></li>
-						</ul>
+					</li>
+					<li class="split" style="width:80px; padding-top:0; padding-left:2px;">
+						<div title="선굵기 및 글자크기 조절"  data-toggle="tooltip" data-placement="bottom">
+							<div id="lineWidthText" style="text-align:center; color:#f6931f; font-size:11px; margin: 2px 0;"></div>
+							<div id="lineWidth" style="width:60px; margin-left:8px;"></div>
+						</div>
+					</li>
+					<li class="split undo-tool" title="되돌리기(Ctrl+Z)" data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/undo.png" />
+					</li>
+					<li class="trash-tool right-radius" title="전체 지우기" data-toggle="tooltip" data-placement="bottom">
+						<img src="../images/trash.png" />
+					</li>
+				</ul>
+				
+				<ul style="float:right;" class="bg-primary close-panel">
+		        	<li id="close" class="paint-tool all-radius" data-toggle="tooltip" data-placement="bottom" title="닫기">
+						<img src="../images/close.png"/>
+					</li>
+				</ul>
+		    </div>
+		    
+	       	<div id="sketch"></div>
+	
+		<div id="thumbnail">
+			<div class="list">
+				<ul>
+				</ul>
+				<a class="backward">
+					<p style="vertical-align:middle; display:table-cell; font-size:30px;background:#222;"><</p>
+				</a>
+				<a class="forward">
+					<p style="vertical-align:middle; display:table-cell; font-size:30px;background:#222;">></p>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">이메일 전송하기</h4>
+	      </div>
+	      <div class="modal-body">
+	        <form>
+	        	<div class="form-group">
+		            <label for="inputEmail">보내는 사람</label>
+		            <input type="email" class="form-control" id="from" placeholder="Email">
+		        </div>
+		        <div class="form-group">
+		            <label for="inputEmail">받는 사람</label>
+		            <input type="email" class="form-control" id="to" placeholder="Email">
+		        </div>
+		        <div class="form-group">
+		            <label for="inputPassword">제목</label>
+		            <input type="subject" class="form-control" id="subject" name="subject" placeholder="Subject">
+		        </div>
+		        <div class="form-group">
+		            <label for="inputPassword">내용</label>
+		            <textarea name="contents" id="contents" class="form-control" rows="5" placeholder="Contents"></textarea>
+		        </div>
+		        <div class="form-group">
+		            <label for="inputPassword">이미지 첨부</label>
+		            <div class="row">
+					  <div id="screenshotHistoryAttachId" style="padding:0 15px;">
+					    
+					  </div>
 					</div>
-				</li>
-				<li class="split" style="width:80px; padding-top:0; padding-left:2px;">
-					<div title="선굵기 및 글자크기 조절">
-						<div id="lineWidthText" style="text-align:center; color:#f6931f; font-size:11px; margin: 2px 0;"></div>
-						<div id="lineWidth" style="width:60px; margin-left:8px;"></div>
-					</div>
-				</li>
-				<li class="split undo-tool">
-					<img src="../images/undo.png" title="되돌리기"/>
-				</li>
-				<li class="trash-tool right-radius">
-					<img src="../images/trash.png" title="전체 지우기"/>
-				</li>
-			</ul>
-			
-			<ul style="float:right;" class="bg-primary close-panel">
-	        	<li id="close" class="paint-tool all-radius" title="닫기">
-					<img src="../images/close.png"/>
-				</li>
-			</ul>
+		        </div>
+		    </form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" id="btnSendMail" class="btn btn-primary">Send</button>
+	      </div>
 	    </div>
-	    
-       	<div id="sketch"></div>
-       
-       <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="js/sketch.js"></script>
-        <script type="text/javascript" src="js/preview.js"></script>
-        <script type="text/javascript" src="js/drawing.js"></script>
-        <script type="text/javascript" src="js/jquery.imgareaselect.min.js"></script>
+	  </div>
+	</div>
+	
+	<script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="js/lib/bootstrap.js"></script>
+	<script type="text/javascript" src="js/preview.js"></script>
+	<script type="text/javascript" src="js/drawing.js"></script>
+	<script type="text/javascript" src="js/lib/jquery.imgareaselect.min.js"></script>
+	<script type="text/javascript" src="js/lib/dropbox-datastores-1.2.0.js"></script>
         
     </body>
 </html>

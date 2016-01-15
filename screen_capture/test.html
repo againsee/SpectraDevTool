@@ -1,5 +1,17 @@
-<canvas id="canvas1"></canvas>
-<script src="js/shape.js"></script>
+<script src="/lib/oauth2/oauth2.js"></script>
 <script>
-init();
+var googleAuth = new OAuth2('google', {
+	  client_id: '278542622985-cces8t2lo88c54m323b4s4gtpfe4rkam.apps.googleusercontent.com',
+	  client_secret: 'b4a5741bd3d6de6ac591c7b0e279c9f',
+	  api_scope: 'https://www.googleapis.com/auth/tasks'
+	});
+
+
+	googleAuth.authorize(function() {
+	  // Ready for action, can now make requests with
+	  googleAuth.getAccessToken()
+	});
 </script>
+
+
+table>tr>td.user$$*10

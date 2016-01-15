@@ -1,17 +1,25 @@
 #sketch 
 {
-    float: left;
-    width: 100%;
-    height: 100%;
-    position: relative;
+    position: fixed;
+    overflow:auto;
+    top:68px;
+    left:0;
+    right:0;
+    bottom: 92px;
 }
 
 #tmp_canvas 
 {
-    position: absolute;
-    left: 0px; right: 0;
-    bottom: 0; top: 0;
+    --position: fixed;
+    position:absolute;
+    margin: 0 auto 0 auto;
+    --top:68px;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 92px;
     cursor: crosshair;
+    --border: 3px solid red;
 }
 
 

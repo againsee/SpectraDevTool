@@ -9,19 +9,30 @@ body {
 body.upload {
     cursor: progress;
 }
+a {text-decoration: none;}
+.wrapper {
+	--display:block; 
+	width:100%; 
+	height:100%; 
+	position:relative;
+	min-width:1000px;
+}
 #screenshot {
     display: block;
-    margin: 10px auto 10px auto;
+    margin: 0 auto 0 auto;
     -webkit-box-shadow: 0px 0px 50px rgba(0,0,0,0.6);
+    //position:fixed;
+    //overflow:auto;
+    --border:3px solid blue;
 }
 
 #tmp_canvas {
 	display: block;
-    margin: 10px auto 10px auto;
+    margin: 0 auto 0 auto;
     -webkit-box-shadow: 0px 0px 50px rgba(0,0,0,0.6);
 }
 
-#screenshot-img {
+.screenshot-img {
     position: fixed;
     z-index: -1;
     width: 100%;
@@ -33,6 +44,24 @@ body.upload {
     opacity: 0.2;
 }
 
-.paint-toolbar {background-color:#337ab7; width:100%; height:68px; text-align:center; float:left;}
+.paint-toolbar {min-width:1000px; background-color:#337ab7; width:100%; height:68px; text-align:center; float:left;position:fixed; top:0; display:block; z-index:999;}
+.thumbnail-img {margin:5px; width:120px; height:88px; border:1px solid red; }
 
+#thumbnail {position:fixed; left:0; right:0; bottom:0; width:100%; height:92px; background:#333; opacity:0.9; z-index:1; overflow:hidden}
+#thumbnail .list {position:relative; height:100%; overflow:hidden; width:100%; z-index:1;}
+#thumbnail .list ul li:first-child {margin-left:20px;}
+#thumbnail img {width:100%; height:100%;}
+#thumbnail ul {margin:0; padding:0; position:absolute; left:0; top:0;}
+#thumbnail li {position:relative; float:left; margin:3px; width:140px; height:85px; opacity:0.5; margin:3px;}
+#thumbnail li.selected {opacity:1.0;}
+#thumbnail .backward {height:100%; left:0; top:0; width:20px; display:table; position:absolute;}
+#thumbnail .forward {height:100%; right:0; top:0; width:20px; display:table; position:absolute;}
+#thumbnail a.backward:hover {text-decoration:none; cursor:pointer;}
+#thumbnail a.forward:hover {text-decoration:none; cursor:pointer;}
 
+#thumbnail .thumbnail-li .thumbnail_close {position:absolute; right:4px; top:4px; width:16px; height:16px; display:none; cursor:pointer;}
+
+#clipboard_layer {z-index:100000;position:fixed;width:100%;top:5%;}
+#clipboard_layer .panel {display:inline-block;background-color:white;padding:10px;border:1px solid black;}
+#clipboard_layer img {max-width:80%;max-height:80%;}
+#clipboard_layer .close {position:absolute; right:10px; top:0;color:#000; font-size:80px; cursor:pointer;}

@@ -3,7 +3,7 @@ body {
     padding: 0px;
     font-family: sans-serif;
     font-size: 12px;
-    width: 220px;
+    width: 300px;
     color: #333;
 }
 
@@ -50,10 +50,6 @@ li a {
     text-decoration: none;
 }
 
-.recent li a {
-    line-height: 14px;
-}
-
 a, a:active, a:visited {
     color: #555;
 }
@@ -81,4 +77,12 @@ li.title {
 
 li a div {
 	margin-top: 4px;
+}
+
+ul li div.text {
+    float:left;
+}
+
+ul li div.shortcut {
+    float:right;
 }
